@@ -61,9 +61,11 @@ ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    
 }
 
 ul li {
+    position: relative;
     font-size: 20px;
     background-color: #4b4b4b;
     padding: 15px;
@@ -77,4 +79,40 @@ ul li {
 ul li:hover {
     background-color: #5f5f5f;
     cursor: pointer;
+}
+
+ul li:active {
+	background: #747474;
+}
+ul li:before {
+	content: "Copied";
+	position: absolute;
+	top: -45px;
+	right: 0;
+    left: 0;
+    width: 70px;
+    margin: 0 auto;
+	background: #5f5f5f;
+	padding: 8px 10px;
+	border-radius: 20px;
+	font-size: 15px;
+    box-shadow: #000000 0px 1px 4px;
+	display: none;
+}
+ul li:after {
+	content: "";
+	position: absolute;
+	top: -20px;
+    left: 0;
+	right: 0;
+    margin: 0 auto;
+	width: 10px;
+	height: 10px;
+	background: #5f5f5f;
+	transform: rotate(45deg);
+	display: none;
+}
+ul li.active:before,
+ul li.active:after {
+	display: block;
 }

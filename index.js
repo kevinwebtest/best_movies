@@ -63,7 +63,11 @@ function appendToMovieListEl(item) {
     
     // Delete Item from DB
     newEl.addEventListener("click", function() {
-        navigator.clipboard.writeText(newEl.textContent);
+        navigator.clipboard.writeText(newEl.textContent)
+        newEl.classList.add("active")
+        setTimeout(function(){
+            newEl.classList.remove("active")
+        },1500)
         // let exactLocationOfItemInDB = ref(database, `movieList/${itemID}`)
         
         // remove(exactLocationOfItemInDB)
