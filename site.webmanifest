@@ -1,6 +1,6 @@
 {
-    "name": "Best Movies",
-    "short_name": "Best Movies",
+    "name": "Best Movies DB",
+    "short_name": "Best Movies DB",
     "icons": [
         {
             "src": "./assets/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#425F57",
-    "background_color": "#425F57",
+    "theme_color": "#000000",
+    "background_color": "#000000",
     "display": "standalone"
 }
