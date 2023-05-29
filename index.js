@@ -12,6 +12,7 @@ const movieListDB = ref(database, "movieList")
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 const movieListEl = document.getElementById("movie-list")
+const inputWrapperEl = document.getElementById("input-wrapper")
 
 
 addButtonEl.addEventListener("click", function() { //only updates if the movie written is not in the list
@@ -19,7 +20,10 @@ addButtonEl.addEventListener("click", function() { //only updates if the movie w
     let allMovies = movieListEl.innerText.toLowerCase().split('\n')
     
     if(allMovies.length>0 && allMovies.includes(inputValue.toLowerCase())) {
-        alert("Already Added!")
+        inputWrapperEl.classList.add("doubled")
+        setTimeout(function(){
+            inputWrapperEl.classList.remove("doubled")
+        }, 1500)
     } 
     else if (inputValue.trim().length!==0){
         push(movieListDB, inputValue)
